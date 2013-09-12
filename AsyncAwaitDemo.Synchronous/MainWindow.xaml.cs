@@ -17,7 +17,6 @@ namespace AsyncAwaitDemo.Synchronous
             InitializeComponent();
         }
 
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             status.Text = string.Empty;
@@ -27,11 +26,11 @@ namespace AsyncAwaitDemo.Synchronous
             
             status.Text += string.Format("Started processing {0} files..." + Environment.NewLine, textFiles.Count);
             
-            var sumTask = SumFiles(textFiles);
+            var totalFileLength = SumFiles(textFiles);
             
             status.Text += "Control came back to Button_Click_1" + Environment.NewLine;
             
-            var totalLength = sumTask;
+            var totalLength = totalFileLength;
             status.Text += string.Format(Environment.NewLine + "Done! Total length is: {0} bytes" + Environment.NewLine, totalLength);
         }
 
